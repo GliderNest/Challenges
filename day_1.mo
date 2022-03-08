@@ -115,11 +115,11 @@ actor {
     };
 
     //Challenge 10
-    public func selection_sort(array : [Nat]) : async [Nat] {
-        Array.sort(array, Nat.compare(array)) == [1, 2, 4, 5, 6]);
-        return array;
+    //public func selection_sort(array : [Nat]) : async [Nat] {
+     //   Array.sort(array, Nat.compare(array)) == [1, 2, 4, 5, 6]);
+    //    return array;
             
-    };
+    //};
     
     
 }
