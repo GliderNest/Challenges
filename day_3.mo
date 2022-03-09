@@ -138,4 +138,13 @@ actor {
     public func squared_array(array : [Nat]) : async [Nat] {
         return (Array.map(array, f_square));
     };
+
+    //Challenge 9
+    let f_increase = func (m : Nat, index : Nat) : Nat {
+        return m + index;
+    };
+    
+    public func increase_by_index(array : [Nat]) : async [Nat] {
+        return (Array.mapEntries(array, f_increase));
+    };
 }
