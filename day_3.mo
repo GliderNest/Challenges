@@ -53,5 +53,19 @@ actor {
             return "Seven has not been found!";
         };
         
-    }
+    };
+
+    //Challenge 4
+    public func nat_opt_to_nat(n : ?Nat, m : Nat) : async Nat {
+        switch(n){
+            // Case where n is null
+            case(null) {
+                return m;
+            };
+            // Case where n is a nat
+            case(?something){
+                return something;
+            };
+        };
+    };
 }
