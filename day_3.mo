@@ -147,4 +147,28 @@ actor {
     public func increase_by_index(array : [Nat]) : async [Nat] {
         return (Array.mapEntries(array, f_increase));
     };
+
+    //Challenge 10
+    //testing function used to compare the values
+    let test_func = func (m : Nat, n : Nat) : Bool {
+        if (m == n) {
+            return true;
+        };
+        return false;
+    };
+    
+    //the main contains higher order function we should make
+    func contains<A>(array: [A], a : A, f : (A, A) -> Bool) : Bool {
+        for (value in array.vals()) {
+            if (f(value, a)) {
+                return true;
+            };
+        };
+        return false;
+    };
+
+    //public function for testing functionality of the function above
+    public func test_contains_nat(array : [Nat], n: Nat) : async Bool {
+        return contains<Nat>(array, n, test_func);
+    };
 }
