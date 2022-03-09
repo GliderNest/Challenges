@@ -120,4 +120,13 @@ actor {
     public func populate_array(array : [?Nat]) : async [Nat] {
         return (Array.map(array, f));
     };
+
+    //Challenge 7
+    let f_sum = func (m : Nat, n : Nat) : Nat {
+        return m + n;
+    };
+    
+    public func sum_of_array(array : [Nat]) : async Nat {
+        return Array.foldLeft(array, 0, f_sum);
+    };
 }
