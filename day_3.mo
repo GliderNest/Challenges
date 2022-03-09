@@ -129,4 +129,13 @@ actor {
     public func sum_of_array(array : [Nat]) : async Nat {
         return Array.foldLeft(array, 0, f_sum);
     };
+
+    //Challenge 8
+    let f_square = func (m : Nat) : Nat {
+        return m**2;
+    };
+
+    public func squared_array(array : [Nat]) : async [Nat] {
+        return (Array.map(array, f_square));
+    };
 }
