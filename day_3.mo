@@ -102,5 +102,22 @@ actor {
     };
 
     //Challenge 6
+    //creating the function to be used as a parameter in the map function
+    //to convert null elements to 0    
+    let f = func (n : ?Nat) : Nat {
+        switch(n){
+            // Case where n is null
+            case(null) {
+                return 0;
+            };
+            // Case where n is a nat
+            case(?something){
+                return something;
+            };
+        };
+    };
     
+    public func populate_array(array : [?Nat]) : async [Nat] {
+        return (Array.map(array, f));
+    };
 }
