@@ -4,6 +4,7 @@ module {
         energy : Nat;
     };
 
+    //Challenge 4
     public func sleep (animal : Animal) : Animal {
         let animal2 : Animal = {
             species = animal.species;
