@@ -1,5 +1,6 @@
 import HashMap "mo:base/HashMap";
 import Principal "mo:base/Principal";
+import Cycles "mo:base/ExperimentalCycles";
 
 shared ({ caller = creator }) actor class MyCanister() = {
 
@@ -47,12 +48,13 @@ _
         return(favoriteNumber.get(caller));
     };
 
-    /*
+    //Challenge 6
     public func deposit_cycles(): async Nat {
         let n = Cycles.accept(Cycles.available());
         return(n);
     };
 
+    /*
     stable var version_number : Nat = 0;
     system func postupgrade() {
         version_number := version_number + 1;
